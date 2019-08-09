@@ -39,7 +39,7 @@ Both the `runXxxxx.sh` scripts are used to test the meterian scanner native imag
 - `build.logs`: build logs 
 - `META-INF/native-image`: folder with all the configuration files extracted by the native-image tracing agent needed during build time
 
-Comment: the macOS binary is many times bigger than the Linux one.
+Comment: the macOS binary is a bit smaller than the Linux one.
 
 ### Dependencies
 

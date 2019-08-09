@@ -56,12 +56,37 @@ runReal() {
 	${CURRENT_DIR}/${IMAGE_NAME}  \
 	     ${CLI_ARG_JAVA_LIB_PATH} \
 	     -Dlog.level=INFO         \
-	     --dump=dependencies.     \
+	     --dump=dependencies      \
 	     --report-json=${PROJECT_FOLDER}/report.json && true
 	cd ${CURRENT_DIR}
 	echo "~~~~ Finished testing built binary on autofix-sample-maven-upgrade"
 }
 
+runRealMoreOptions() {
+	echo ""
+	echo "~~~~ Testing built binary on autofix-sample-maven-upgrade (with more options)"
+	CURRENT_DIR=$(pwd)
+	echo ""
+	PROJECT_FOLDER=$(cloneProject ${CURRENT_DIR})
+	cd ${PROJECT_FOLDER}
+	${CURRENT_DIR}/${IMAGE_NAME}  \
+	     --start-only             \
+	     ${CLI_ARG_JAVA_LIB_PATH}
+
+	${CURRENT_DIR}/${IMAGE_NAME}  \
+	     ${CLI_ARG_JAVA_LIB_PATH} \
+	     --clean                  \
+	     -Dlog.level=INFO         \
+	     --min-security=90        \
+	     --min-stability=90       \
+	     --min-licensing=90       \
+	     --dump=dependencies      \
+	     --report-json=${PROJECT_FOLDER}/report.json && true
+	cd ${CURRENT_DIR}
+	echo "~~~~ Finished testing built binary on autofix-sample-maven-upgrade"	
+}
+
 setupEnv ${1:-${HOME}/.meterian/meterian-cli.jar}
 runBasic
 runReal
+runRealMoreOptions
