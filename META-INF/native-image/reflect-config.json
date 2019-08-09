@@ -199,6 +199,10 @@
   ]
 },
 {
+  "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
   "allDeclaredMethods":true,
   "allPublicMethods":true,
@@ -249,15 +253,6 @@
   "name":"org.apache.commons.logging.LogFactory"
 },
 {
-  "name":"org.apache.commons.logging.impl.Log4JLogger",
-  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }],
-  "allPublicMethods":true
-},
-{
-  "name":"org.apache.commons.logging.impl.LogFactoryImpl",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
   "name":"org.apache.commons.logging.impl.Jdk14Logger",
   "allDeclaredMethods":true,
   "allPublicMethods":true,
@@ -267,6 +262,15 @@
   "allPublicClasses":true
 },
 {
+  "name":"org.apache.commons.logging.impl.Log4JLogger",
+  "allPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.apache.commons.logging.impl.LogFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"org.apache.commons.logging.impl.WeakHashtable",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -274,9 +278,5 @@
   "name":"sun.misc.Unsafe",
   "fields":[{"name":"theUnsafe"}],
   "methods":[{"name":"allocateInstance","parameterTypes":["java.lang.Class"] }]
-},
-{
-  "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
 }
 ]

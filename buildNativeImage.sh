@@ -18,9 +18,10 @@ detectOSPlatform() {
 
 buildNativeImage() {
 	echo ""
+	echo "Deleting existing ${IMAGE_NAME}" && rm -f ${IMAGE_NAME}
 	echo "~~~~ Building native-image '${IMAGE_NAME}' from ${JARFILE}"
 	echo "~~~~ ...this may take a bit of time"
-	echo "Deleting existing ${IMAGE_NAME}" && rm -f ${IMAGE_NAME}
+	echo "~~~~ Run 'tail -f build.logs' to see current progress"
 	native-image ${OPTIONS} -jar ${JARFILE} ${IMAGE_NAME} &> build.logs
 	echo "~~~~ Finished building native-image '${IMAGE_NAME}' from ${JARFILE}."
 }

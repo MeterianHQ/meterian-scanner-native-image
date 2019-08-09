@@ -76,8 +76,14 @@ runTracerToExtractMetaInf() {
 	PROJECT_FOLDER=$(cloneProject ${CURRENT_DIR})
 	cd ${PROJECT_FOLDER}
 	java -agentlib:native-image-agent=config-merge-dir=${nativeImageMetaInfFolder} \
-	     -Dlog.level=INFO \
-	     -jar ${JARFILE} --dump=dependencies --report-json=./report.json && true
+	     -Dlog.level=INFO     \
+	     -jar ${JARFILE}      \
+	     --clean              \
+	     --min-security=90    \
+	     --min-stability=90   \
+	     --min-licensing=90   \
+	     --dump=dependencies  \
+	     --report-json=./report.json && true
 	cd ${CURRENT_DIR}
 	echo "~~~~ Finished running tracing agent on the ${JARFILE}"
 }

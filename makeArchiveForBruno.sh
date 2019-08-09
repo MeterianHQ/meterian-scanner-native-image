@@ -8,5 +8,6 @@ rm -f meterian-scanner-native-image-scripts.tgz
 
 tar --exclude='./whichJavaVersionIsJarBuiltIn.sh'   \
     --exclude='./makeArchiveForBruno.sh'            \
+    --exclude='./meterian-cli-*'                    \
     -zcvf meterian-scanner-native-image-scripts.tgz \
-    *.sh README.md meterian-cli-* META-INF
+    *.sh README.md META-INF
