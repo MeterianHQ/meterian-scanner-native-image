@@ -1,0 +1,11 @@
+aeonbits*
+autofix*
+owner*
+Aeon*
+build.logs
+meterian-cli-*
+.DS_Store
+*.tgz
+*.tar.gz
+*.jar
+meterian-cli.source.java
