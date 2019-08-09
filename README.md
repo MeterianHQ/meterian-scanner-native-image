@@ -36,7 +36,7 @@ Both the `runXxxxx.sh` scripts are used to test the meterian scanner native imag
 
 - `meterian-cli-linux`: native image binary for Linux created from the `meterian-cli.jar` file
 - `meterian-cli-macos`: native image binary for MacOS created from the `meterian-cli.jar` file
-- `build.logs`: build logs 
+- `build-linux.logs`, `build-macos.logs`: build logs produced when `buildNativeImage.sh` is run for the respective OS
 - `META-INF/native-image`: folder with all the configuration files extracted by the native-image tracing agent needed during build time
 
 Comment: the macOS binary is a bit smaller than the Linux one.
@@ -110,6 +110,11 @@ By default picks up `$HOME/.meterian/meterian-cli.jar`
 ./testNativeImage.sh /path/to/another/jar/file
 ```
 
+```bash
+JAVA_HOME=/graalvm ./testNativeImage.sh
+```
+When running inside the GraalVM docker container.
+
 ### installMaven.sh
 
 ```bash
@@ -139,7 +144,11 @@ Both the `runXxxxx.sh` scripts map the `$HOME/.meterian` folder and the current 
 ```bash
 meterian-cli-linux --help
 meterian-cli-linux -Dlog.level=INFO
-meterian-cli-linux [meterian CLI options]
+
+The above commands work just out of the box, although to scan a project we need the below:
+
+```bash
+meterian-cli-macos -Djava.library.path=${JAVA_HOME}/jre/lib/amd64 [meterian CLI options]
 ```
 
 ### meterian-cli-macos

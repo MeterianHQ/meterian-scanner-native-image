@@ -21,13 +21,16 @@ CLI_ARG_JAVA_LIB_PATH="" # not needed for Linux, only for MacOS
 JARFILE=""
 IMAGE_NAME=""
 setupEnv() {
- 	if [[ "$(detectOSPlatform)" = "macos" ]]; then
- 		export JAVA_LIB_PATH="${GRAALVM_HOME}/jre/lib"
- 	fi
- 	CLI_ARG_JAVA_LIB_PATH="-Djava.library.path=${JAVA_LIB_PATH}"
+	if [[ "$(detectOSPlatform)" = "linux" ]]; then 
+ 		JAVA_LIB_PATH="${JAVA_HOME}/jre/lib/amd64"
+	elif [[ "$(detectOSPlatform)" = "macos" ]]; then
+		JAVA_LIB_PATH="${JAVA_HOME}/jre/lib"
+    fi
+
+ 	export CLI_ARG_JAVA_LIB_PATH="-Djava.library.path=${JAVA_LIB_PATH}"
 
  	JARFILE=$1
-	IMAGE_NAME=$(basename ${JARFILE%.*})-$(detectOSPlatform)
+	IMAGE_NAME="$(basename ${JARFILE%.*})-$(detectOSPlatform)"
 }
 
 runBasic() {

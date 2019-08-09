@@ -2,7 +2,7 @@ aeonbits*
 autofix*
 owner*
 Aeon*
-build.logs
+build*.logs
 meterian-cli-*
 .DS_Store
 *.tgz
