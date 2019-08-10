@@ -65,7 +65,17 @@
 },
 {
   "name":"com.meterian.common.concepts.bare.BareAdvice",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+  "fields":[
+    {"name":"id", "allowWrite": true}, 
+    {"name":"library", "allowWrite": true},
+    {"name":"description", "allowWrite": true},
+    {"name":"severity", "allowWrite": true},
+    {"name":"links", "allowWrite": true},
+    {"name":"type", "allowWrite": true},
+    {"name":"cvss", "allowWrite": true},
+    {"name":"versionRange", "allowWrite": true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.BareAdvice$AdviceType",
@@ -78,7 +88,11 @@
 },
 {
   "name":"com.meterian.common.concepts.bare.BareAdvice$Link",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+    "fields":[
+    {"name":"type", "allowWrite": true}, 
+    {"name":"url", "allowWrite": true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.BareAdvice$LinkType",
@@ -140,7 +154,12 @@
   "allDeclaredMethods" : true,
   "allPublicMethods" : true,
   "allDeclaredClasses" : true,
-  "allPublicClasses" : true
+  "allPublicClasses" : true,
+  "fields":[
+    {"name":"uuid", "allowWrite" : true},
+    {"name":"branch", "allowWrite" : true},
+    {"name":"commitId", "allowWrite" : true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.BareResult",
@@ -173,7 +192,19 @@
 },
 {
   "name":"com.meterian.common.concepts.bare.reports.BareSecurityAdvice",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+    {"name":"dependency", "allowWrite" : true},
+    {"name":"advices", "allowWrite" : true},
+    {"name":"hierarchy", "allowWrite" : true},
+    {"name":"locations", "allowWrite" : true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.reports.BareSecurityReport",
@@ -185,15 +216,48 @@
 },
 {
   "name":"com.meterian.common.concepts.bare.reports.BareStabilityAdvice",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"name", "allowWrite": true},
+     {"name":"version", "allowWrite": true},
+     {"name":"scope", "allowWrite": true},
+     {"name":"latestPatch", "allowWrite": true},
+     {"name":"latestMinor", "allowWrite": true},
+     {"name":"latestMajor", "allowWrite": true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.reports.BareStabilityReport",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"reports", "allowWrite": true}
+  ]
 },
 {
   "name":"com.meterian.common.concepts.bare.reports.BareStabilitySingleReport",
-  "allDeclaredFields":true
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"language", "allowWrite": true},
+     {"name":"versions", "allowWrite": true}
+  ]
 },
 {
   "name":"com.meterian.servers.dependency.java.maven.MavenConfig",
