@@ -98,6 +98,16 @@ SHOW_STACK_TRACES=true ./buildNativeImage.sh
 
 Show stack trace when failures happen during the build process.
 
+```bash
+JAVA_HOME=/graalvm ./buildNativeImage.sh
+
+or 
+
+JAVA_HOME=/opt/java/openjdk ./buildNativeImage.sh
+```
+
+When running build from inside the docker container or in the Linux environment, in case `JAVA_HOME` is not set.
+
 ### testNativeImage.sh
 
 ```
@@ -112,8 +122,13 @@ By default picks up `$HOME/.meterian/meterian-cli.jar`
 
 ```bash
 JAVA_HOME=/graalvm ./testNativeImage.sh
+
+or 
+
+JAVA_HOME=/opt/java/openjdk ./testNativeImage.sh
 ```
-When running inside the GraalVM docker container.
+
+When running inside the docker container or in the Linux environment where `JAVA_HOME` has not been set.
 
 ### installMaven.sh
 

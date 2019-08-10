@@ -27,7 +27,7 @@ setupEnv() {
 		JAVA_LIB_PATH="${JAVA_HOME}/jre/lib"
     fi
 
- 	export CLI_ARG_JAVA_LIB_PATH="-Djava.library.path=${JAVA_LIB_PATH}"
+ 	export CLI_ARG_JAVA_LIB_PATH="-Djava.library.path=${JAVA_LIB_PATH} -Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit"
 
  	JARFILE=$1
 	IMAGE_NAME="$(basename ${JARFILE%.*})-$(detectOSPlatform)"
