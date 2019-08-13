@@ -29,5 +29,8 @@ cat ${TARGET_PAYLOAD_FILE} >>${TARGET_SCRIPT}
 echo "~~~ Making ${TARGET_SCRIPT} executable"
 chmod +x ${TARGET_SCRIPT}
 
+echo "~~~ Removing payload ${TARGET_PAYLOAD_FILE} archive"
+rm -f ${TARGET_PAYLOAD_FILE}
+
 echo "~~~ Finished creating ${TARGET_SCRIPT}"
 cd ${SCRIPT_CURRENT_DIR}
