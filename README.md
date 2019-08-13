@@ -13,6 +13,7 @@ The native image images produced by these may still need some amendments, and we
     + [Build meterian client native image](#build-meterian-client-native-image)
         + [Artifacts created from scripts](#artifacts-created-from-scripts)
         + [Dependencies (runtime)](#dependencies-runtime)
+        + [Known issue(s)](#known-issues)
     + [Build meterian client native image installer](#build-meterian-client-native-image-installer)
         + [Artifacts created from scripts](#artifacts-created-from-scripts-1)
         + [Dependencies (buildtime)](#dependencies-buildtime)
@@ -67,6 +68,10 @@ All scripts have been written with idempotency in as many cases possible.
 - `cacerts` present in the `${JAVA_HOME}/jre/lib/security/cacerts` folder, if absent, such a folder with the certs should be created in the `${JAVA_HOME}/jre/lib/security/` folder
 
 See [GraalVM clojure project](https://github.com/taylorwood/clojurl), for a good example of the specific dependencies.
+
+#### Known issue(s)
+
+- There is potentially a bug in the native-image tracer (see reported [git issue](https://github.com/oracle/graal/issues/1599)) that overwrites our existing `META-INF/native-image/reflect-config.json` if we re-run the `build-installer/prepareForNativeBuild.sh` script. In case `reflect-config.json` needs updating and this happens, revert the lost changes and merge the new changes into the `reflect-config.json` and commit it - will have to be a semi-manual process till the issue is resolved.
 
 ### Build meterian client native image installer
 
