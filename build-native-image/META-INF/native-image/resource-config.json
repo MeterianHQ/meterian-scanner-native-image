@@ -1,0 +1,11 @@
+{
+  "resources":[
+    {"pattern":"logback.xml"}, 
+    {"pattern":"mozilla/public-suffix-list.txt"}, 
+    {"pattern":"non-html.txt"}, 
+    {"pattern":"org/slf4j/impl/StaticLoggerBinder.class"}, 
+    {"pattern":"sun/net/idn/uidna.spp"}, 
+    {"pattern":"sun/text/resources/unorm.icu"}, 
+    {"pattern":"version.txt"}
+  ]
+}

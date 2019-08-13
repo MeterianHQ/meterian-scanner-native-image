@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+set -u
+set -o pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+function untar_payload()
+{
+	TARGET=$1
+	THIS_FILE_FULL_PATH="${SCRIPT_DIR}/$(basename $0)"
+
+	echo "~~~~ Creating ${TARGET} if it does not exist..."
+	mkdir -p ${TARGET}
+	cd ${TARGET}
+
+	echo "~~~~ Installing meterian client into ${TARGET}"
+	match=$(grep --text --line-number '^PAYLOAD:$' ${THIS_FILE_FULL_PATH} | cut -d ':' -f 1)
+	payload_start=$((match + 1))
+	tail -n +${payload_start} ${THIS_FILE_FULL_PATH} | tar -xzf -
+}
+
+METERIAN_HOME_DIR="${HOME}/.meterian/"
+untar_payload ${METERIAN_HOME_DIR}
+echo "~~~ The meterian client has been installed in the ${METERIAN_HOME_DIR} folder"
+echo ""
+echo "Do the below for this session:"
+echo "    $ export PATH=${METERIAN_HOME_DIR}:${PATH}"
+echo ""
+echo "And then please add ${METERIAN_HOME_DIR} to the PATH env variable in your .bashrc or .zshrc files to able to use the client from CLI"
+echo ""
+echo "Usage: "
+echo "    $ cd /folder/to/project"
+echo "    $ meterian-cli [meterian CLI Options]"
+echo ""
+
+cd ${SCRIPT_DIR}
+
+exit 0
+

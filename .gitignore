@@ -9,3 +9,4 @@ meterian-cli-*
 *.tar.gz
 *.jar
 meterian-cli.source.java
+apache-maven-3.6.1/

@@ -1,0 +1,352 @@
+[
+{
+  "name":"ch.qos.logback.classic.encoder.PatternLayoutEncoder",
+  "allPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.ClassOfCallerConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.DateConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LevelConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LineSeparatorConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.MessageConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.MethodOfCallerConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.core.ConsoleAppender",
+  "allPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.core.pattern.IdentityCompositeConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.cli.Configuration",
+  "allPublicMethods":true
+},
+{
+  "name":"com.meterian.cli.builds.LocalBuild",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.cli.remote.RemoteAccount",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.Language",
+  "fields":[
+    {"name":"dotnet"}, 
+    {"name":"java"}, 
+    {"name":"javascript"}, 
+    {"name":"nodejs"}, 
+    {"name":"php"}, 
+    {"name":"python"}, 
+    {"name":"ruby"}, 
+    {"name":"scala"}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareAdvice",
+  "allDeclaredFields":true,
+  "fields":[
+    {"name":"id", "allowWrite": true}, 
+    {"name":"library", "allowWrite": true},
+    {"name":"description", "allowWrite": true},
+    {"name":"severity", "allowWrite": true},
+    {"name":"links", "allowWrite": true},
+    {"name":"type", "allowWrite": true},
+    {"name":"cvss", "allowWrite": true},
+    {"name":"versionRange", "allowWrite": true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareAdvice$AdviceType",
+  "fields":[
+    {"name":"DEFECT"}, 
+    {"name":"LEGAL"}, 
+    {"name":"SECURITY"}, 
+    {"name":"SUGGEST"}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareAdvice$Link",
+  "allDeclaredFields":true,
+    "fields":[
+    {"name":"type", "allowWrite": true}, 
+    {"name":"url", "allowWrite": true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareAdvice$LinkType",
+  "fields":[
+    {"name":"ANNOUNCE"}, 
+    {"name":"BUGTRACKER"}, 
+    {"name":"CVE"}, 
+    {"name":"FIX"}, 
+    {"name":"INFO"}, 
+    {"name":"NVD"}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareAdvice$Severity",
+  "fields":[
+    {"name":"HIGH"}, 
+    {"name":"LOW"}, 
+    {"name":"MEDIUM"}, 
+    {"name":"NA"}, 
+    {"name":"NONE"}, 
+    {"name":"SUGGEST"}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareDependency",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareDependency$Scope",
+  "fields":[
+    {"name":"api"}, 
+    {"name":"compile"}, 
+    {"name":"implementation"}, 
+    {"name":"imports"}, 
+    {"name":"provided"}, 
+    {"name":"root"}, 
+    {"name":"runtime"}, 
+    {"name":"system"}, 
+    {"name":"test"}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareLibrary",
+  "allDeclaredFields":true,
+  "fields":[
+    {"name":"name", "allowWrite" : true},
+    {"name":"language", "allowWrite" : true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareLicense",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareProject",
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+    {"name":"uuid", "allowWrite" : true},
+    {"name":"branch", "allowWrite" : true},
+    {"name":"commitId", "allowWrite" : true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.BareResult",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareLicensingReport",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareLicensingSingleReport",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareLicensingSingleReport$Entry",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareLicensingSingleReport$XLicense",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareLicensingSingleReport$XViolation",
+  "allDeclaredFields":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareSecurityAdvice",
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+    {"name":"dependency", "allowWrite" : true},
+    {"name":"advices", "allowWrite" : true},
+    {"name":"hierarchy", "allowWrite" : true},
+    {"name":"locations", "allowWrite" : true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareSecurityReport",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareSecuritySingleReport",
+  "allDeclaredFields":true
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareStabilityAdvice",
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"name", "allowWrite": true},
+     {"name":"version", "allowWrite": true},
+     {"name":"scope", "allowWrite": true},
+     {"name":"latestPatch", "allowWrite": true},
+     {"name":"latestMinor", "allowWrite": true},
+     {"name":"latestMajor", "allowWrite": true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareStabilityReport",
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"reports", "allowWrite": true}
+  ]
+},
+{
+  "name":"com.meterian.common.concepts.bare.reports.BareStabilitySingleReport",
+  "allDeclaredFields":true,
+  "allDeclaredConstructors" : true,
+  "allPublicConstructors" : true,
+  "allDeclaredMethods" : true,
+  "allPublicMethods" : true,
+  "allDeclaredClasses" : true,
+  "allPublicClasses" : true,
+  "fields":[
+     {"name":"language", "allowWrite": true},
+     {"name":"versions", "allowWrite": true}
+  ]
+},
+{
+  "name":"com.meterian.servers.dependency.java.maven.MavenConfig",
+  "methods":[
+    {"name":"forceUseConfigMavenBinary","parameterTypes":[] }, 
+    {"name":"mavenBinary","parameterTypes":[] }, 
+    {"name":"mavenProfile","parameterTypes":[] }, 
+    {"name":"mavenTreeParameters","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
+  "allDeclaredMethods":true,
+  "allPublicMethods":true,
+  "allDeclaredConstructors":true,
+  "allPublicConstructors":true,
+  "allDeclaredClasses":true,
+  "allPublicClasses":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.beans.PropertyEditorManager"
+},
+{
+  "name":"java.io.File",
+  "allDeclaredFields":true
+},
+{
+  "name":"java.lang.Boolean",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.String",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.net.URI",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javax.management.DynamicMBean"
+},
+{
+  "name":"javax.management.ObjectName"
+},
+{
+  "name":"org.aeonbits.owner.JMXSupport",
+  "allPublicMethods":true
+},
+{
+  "name":"org.aeonbits.owner.PropertiesManager",
+  "allPublicMethods":true
+},
+{
+  "name":"org.aeonbits.owner.crypto.IdentityDecryptor",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.commons.logging.LogFactory"
+},
+{
+  "name":"org.apache.commons.logging.impl.Jdk14Logger",
+  "allDeclaredMethods":true,
+  "allPublicMethods":true,
+  "allDeclaredConstructors":true,
+  "allPublicConstructors":true,
+  "allDeclaredClasses":true,
+  "allPublicClasses":true
+},
+{
+  "name":"org.apache.commons.logging.impl.Log4JLogger",
+  "allPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.apache.commons.logging.impl.LogFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.apache.commons.logging.impl.WeakHashtable",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.misc.Unsafe",
+  "fields":[{"name":"theUnsafe"}],
+  "methods":[{"name":"allocateInstance","parameterTypes":["java.lang.Class"] }]
+}
+]
