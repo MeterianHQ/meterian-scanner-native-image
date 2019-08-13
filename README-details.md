@@ -24,6 +24,7 @@
 - GraalVM 19.1.1 JDK or higher
 - Java 8 JDK (optional, testing purposes)
 - libsunec, cacerts for both Linux and MacOS from any JDK 8 or GraalVM
+- git (to be able to run the test script)
 - `JAVA_HOME` setup in the local environment (points to JDK 8 or GraalVM JDK)
 - `GRAALVM_HOME` setup in the local environment (points to GraalVM JDK)
 - `PATH` setup in the local environment
