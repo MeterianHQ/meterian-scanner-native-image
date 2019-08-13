@@ -4,14 +4,14 @@
 
 - [Requirements](#requirements)
 - [Scripts provided](#scripts-provided)
-    + [Build meterian client native image](#build-meterian-client-native-image)
-        + [Artifacts created from scripts](#artifacts-created-from-scripts)
-        + [Dependencies (runtime)](#dependencies-runtime)
-        + [Known issue(s)](#known-issues)
-    + [Build meterian client native image installer](#build-meterian-client-native-image-installer)
-        + [Artifacts created from scripts](#artifacts-created-from-scripts-1)
-        + [Dependencies (buildtime)](#dependencies-buildtime)
-- [Docker and related scripts provided](#docker-and-related-scripts-provided)
+    - [Build meterian client native image](#build-meterian-client-native-image)
+        - [Artifacts created from scripts](#artifacts-created-from-scripts)
+        - [Dependencies (runtime)](#dependencies-runtime)
+        - [Known issue(s)](#known-issues)
+    - [Build meterian client native image installer](#build-meterian-client-native-image-installer)
+        - [Artifacts created from scripts](#artifacts-created-from-scripts-1)
+        - [Dependencies (buildtime)](#dependencies-buildtime)
+    - [Docker and related scripts provided](#docker-and-related-scripts-provided)
 - [CI/CD process](#cicd-process)
 - [Usages](#usages)
   - [Build meterian client native image](#build-meterian-client-native-image-1)
@@ -77,7 +77,7 @@ See [GraalVM clojure project](https://github.com/taylorwood/clojurl), for a good
 
 #### Artifacts created from scripts
 
-- `build-installer/build/install-meterian-cli-linux.sh` and `build-installer/build/ install-meterian-cli-macos.sh` - installer scripts generated after scripts from the previous section are executed for the respective OS platform. **They self-contained and are meant for client distribution.**
+- `build-installer/build/install-meterian-cli-linux.sh` and `build-installer/build/ install-meterian-cli-macos.sh` - installer scripts generated after scripts from the previous section are executed for the respective OS platform. **They are self-contained and are meant for client distribution.**
 - `build-installer/apache-maven-3.6.1` and `build-installer/apache-maven-3.6.1-bin.tar.gz` are created when creating the installer scripts for the respective environment.
 
 #### Dependencies (buildtime)
@@ -263,4 +263,4 @@ Expects the `METERIAN_API_TOKEN` environment variable to be set. Maps the curren
 Both the `runXxxxx.sh` scripts map the `$HOME/.meterian` folder and the current folder on the host to the `/root/.meterian` and `/workspace` folders inside the container respectively. Also expects the `METERIAN_API_TOKEN` environment variable to be available on the host, which is then made available inside the container.
 
 ---
-Return to [main README.md](./README.md)
+Return to [main README.md](README.md#meterian-scanner-native-image)

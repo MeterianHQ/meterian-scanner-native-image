@@ -10,8 +10,12 @@ The native image images produced by these may still need some amendments, and we
 
 - [Requirements](#requirements)
 - [Workflow](#workflow)
+  - [Installations & setup](installations--setup) 
   - [Build meterian client native-image](#build-meterian-client-native-image)
   - [Build meterian client native-image installer](#build-meterian-client-native-image-installer)
+  - [Build Linux artifacts in a macOS environment](#build-linux-artifacts-in-a-macos-environment)
+  - [Test meterian client native-image installer](#test-meterian-client-native-image-installer)
+  - [Test Linux artifacts in a macOS environment (docker container)](#test-linux-artifacts-in-a-macos-environment-docker-container)
 
 ## Requirements
 
@@ -52,6 +56,59 @@ The native image images produced by these may still need some amendments, and we
 - Enter the `build-installer` folder
 - Run `createPayloadArchiveForInstaller.sh`
 - Run `addPayloadArchiveToInstallScript.sh`
-- This will create the `install-meterian-cli-{linux|macos}.sh` in the `build`sub-folder (which is self-contained and distributable to end-users)
+- This will create the `install-meterian-cli-{linux|macos}.sh` in the `build`sub-folder (they are self-contained and are meant for client distribution)
 
-See [Details section](README-details.md) to find out in detail about the scripts, dependencies and artifacts created.
+### Build Linux artifacts in a macOS environment
+
+- Run `runGraalVMinDocker.sh`
+- Perform the steps mentioned above:
+  - [Build meterian client native-image](#build-meterian-client-native-image)
+  - [Build meterian client native-image installer](#build-meterian-client-native-image-installer)
+
+### Test meterian client native-image installer
+
+#### GraalVM
+- Switch to GraalVM JDK (change JAVA_HOME and PATH)
+- Run `installMaven.sh`
+- Enter `build-native-image` folder
+- Run `testNativeImage.sh`
+- Come out of `build-native-image` folder
+- Enter `build-installer` folder
+- Enter `build` sub-folder
+- Run `install-meterian-cli-linux.sh`
+- Follow the instructions shown on the screen at the end of the execution of the above step
+- Run `meterian-cli --help` at the prompt
+- Clone Java maven project for scanning (using git)
+- Enter project folder
+- Run `meterian-cli` at the prompt
+- Wait till full execution finishes successfully (scan will fail on project most likely)
+
+#### Traditional JDK
+- Switch to Java 8 (change JAVA_HOME and PATH)
+- Run `installMaven.sh`
+- Enter `build-native-image` folder
+- Run `testNativeImage.sh`
+- Come out of `build-native-image` folder
+- Enter `build-installer` folder
+- Enter `build` sub-folder
+- Run `install-meterian-cli-linux.sh`
+- Follow the instructions shown on the screen at the end of the execution of the above step
+- Run `meterian-cli --help` at the prompt
+- Clone Java maven project for scanning (using git)
+- Enter project folder
+- Run `meterian-cli` at the prompt
+- Wait till full execution finishes successfully (scan will fail on project most likely)
+
+### Test Linux artifacts in a macOS environment (docker container)
+
+By Linux artifacts we mean meterian client native image and meterian client native image installer.
+
+#### GraalVM
+- Run `runGraalVMinDocker.sh`
+- Follow steps from above section: [Test meterian client native-image installer > GraalVM](#graalvm)
+
+#### Traditional JDK
+- Run `runPlainJavainDocker.sh`
+- Follow steps from above section: [Test meterian client native-image installer > Traditional JDK](#traditional-jdk)
+
+See [Details section](README-details.md#meterian-scanner-native-image) to find out in detail about the scripts, dependencies and artifacts created.
