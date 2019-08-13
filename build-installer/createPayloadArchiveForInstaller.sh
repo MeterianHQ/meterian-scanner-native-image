@@ -36,8 +36,13 @@ rm -fr ${TGZ_ARCHIVE}
 echo "~~~~ Copying meterian-cli-${OSNAME} to current location"
 cp ../build-native-image/meterian-cli-${OSNAME} .
 
-echo "~~~~ Copying security deps from ${OSNAME}-deps to current location"
-cp ${OSNAME}-deps/* .
+echo "~~~~ Copying Java related security deps for ${OSNAME} to current location"
+if [[ "${OSNAME}" = "linux" ]]; then
+	cp ${JAVA_HOME}/jre/lib/amd64/libsunec.* .
+elif [[ "${OSNAME}" = "macos" ]]; then
+	cp ${JAVA_HOME}/jre/lib/libsunec.* .
+fi
+cp ${JAVA_HOME}/jre/lib/security/cacerts .
 
 echo "~~~~ Creating new ${TGZ_ARCHIVE}"
 tar cvzf ${TGZ_ARCHIVE}                    \

@@ -32,3 +32,23 @@ unpackMavenArchive() {
 		tar -xvzf ${CURRENT_DIR}/${MAVEN_ARTIFACT} -C ${TARGET}
 	fi	
 }
+
+JARFILE=""
+IMAGE_NAME=""
+JAVA_LIB_PATH="" # not needed for Linux, only for MacOS
+CLI_ARG_JAVA_LIB_PATH="" # not needed for Linux, only for MacOS
+setupEnv() {
+	if [[ "$(detectOSPlatform)" = "linux" ]]; then 
+ 		JAVA_LIB_PATH="${JAVA_HOME}/jre/lib/amd64"
+	elif [[ "$(detectOSPlatform)" = "macos" ]]; then
+		JAVA_LIB_PATH="${JAVA_HOME}/jre/lib"
+    fi
+
+ 	export CLI_ARG_JAVA_LIB_PATH="-Djava.library.path=${JAVA_LIB_PATH} "
+ 	CLI_ARG_JAVA_LIB_PATH=" ${CLI_ARG_JAVA_LIB_PATH} -Djavax.net.ssl.trustStore="${JAVA_HOME}/jre/lib/security/cacerts""
+ 	CLI_ARG_JAVA_LIB_PATH=" ${CLI_ARG_JAVA_LIB_PATH} -Djavax.net.ssl.trustStorePassword=changeit"                   
+
+
+ 	JARFILE=$1
+	IMAGE_NAME="$(basename ${JARFILE%.*})-$(detectOSPlatform)"
+}
