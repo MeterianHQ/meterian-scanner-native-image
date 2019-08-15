@@ -19,9 +19,8 @@ detectOSPlatform() {
 SCRIPT_CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 METERIAN_HOME_DIR=${HOME}/.meterian
-MAVEN_HOME_DIR=${METERIAN_HOME_DIR}/apache-maven-3.6.1
 
-PATH="${METERIAN_HOME_DIR}:${MAVEN_HOME_DIR}/bin:${PATH}"                 \
+PATH="${METERIAN_HOME_DIR}:${PATH}"                                   \
     "${SCRIPT_CURRENT_DIR}/meterian-cli-$(detectOSPlatform)"          \
             -Djava.library.path="${METERIAN_HOME_DIR}"                \
             -Djavax.net.ssl.trustStore="${METERIAN_HOME_DIR}/cacerts" \

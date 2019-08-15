@@ -20,7 +20,7 @@ The native image images produced by these may still need some amendments, and we
 ## Requirements
 
 - Docker 19.03.1 or higher (Linux or MacOS)
-- Maven 3.1.1 or higher
+- Maven 3.1.1 or higher (optional, testing purposes)
 - GraalVM 19.1.1 JDK or higher
 - Java 8 JDK (optional, testing purposes)
 - libsunec, cacerts for both Linux and MacOS from any JDK 8 or GraalVM

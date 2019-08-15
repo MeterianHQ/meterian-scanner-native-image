@@ -22,9 +22,6 @@ echo "~~~~ OS Detected: ${OSNAME}"
 
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-downloadMavenArchive
-unpackMavenArchive ${CURRENT_DIR}
-
 METERIAN_CLIENT="meterian-cli-${OSNAME}"
 
 mkdir -p build
@@ -49,8 +46,7 @@ tar cvzf ${TGZ_ARCHIVE}                    \
          ${STATIC_SECURITY_LIB}            \
          ${METERIAN_CLIENT}                \
          cacerts                           \
-         meterian-cli                      \
-         apache-maven-3.6.1
+         meterian-cli
 
 echo "~~~~ Removing dependencies copied to current location"
 rm -f ${STATIC_SECURITY_LIB} cacerts meterian-cli-${OSNAME}

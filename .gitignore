@@ -11,3 +11,4 @@ meterian-cli-*
 meterian-cli.source.java
 apache-maven-3.6.1/
 build/
+install-meterian-cli-*.sh

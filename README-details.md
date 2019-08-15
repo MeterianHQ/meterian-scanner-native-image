@@ -56,7 +56,6 @@ All scripts have been written with idempotency in as many cases possible.
 
 #### Dependencies (runtime)
 
-- Maven for both Linux and MacOS
 - `libsunec.so` for Linux (usually present in the `${JAVA_HOME}/jre/lib/amd64` folder of every JDK/JRE installation of Linux)
 - `libsunec.dylib` for MacOS (usually present in the `${JAVA_HOME}/jre/lib/` folder of every JDK/JRE installation of MacOS)
     - this file sould be present in the same directory as where the native image is during execution or should be made to point to it via the `-Djava.library.path=/path/to/jre/lib/folder` (see `build-native-image/testNativeImage.sh` script)
@@ -78,17 +77,15 @@ See [GraalVM clojure project](https://github.com/taylorwood/clojurl), for a good
 #### Artifacts created from scripts
 
 - `build-installer/build/install-meterian-cli-linux.sh` and `build-installer/build/ install-meterian-cli-macos.sh` - installer scripts generated after scripts from the previous section are executed for the respective OS platform. **They are self-contained and are meant for client distribution.**
-- `build-installer/apache-maven-3.6.1` and `build-installer/apache-maven-3.6.1-bin.tar.gz` are created when creating the installer scripts for the respective environment.
 
 #### Dependencies (buildtime)
 
 - `build-native-image/meterian-cli-linux` or `build-native-image/meterian-cli-macos`
 - `build-installer/installNativeImageScript.sh.template`
-- `build-installer/apache-maven-3.6.1-bin.tar.gz`
 
 ### Docker and related scripts provided
 
-- `installMaven.sh`: install mvn in an environment where it is absent (in theory should work on most Linux installations). Not meant for MacOS, not tested on it.
+- `installMaven.sh`: install Maven in an environment where it is absent (in theory should work on most Linux installations). Not meant for MacOS, not tested on it.
 - `runPlainJavainDocker.sh`: run a docker container with the Meterian environment variable enabled and local directory mapped/mounted as a volume into it. Traditional JDK (OpenJDK 8) available on path.
 - `runGraalVMinDocker.sh`: run a docker container with the Meterian environment variable enabled and local directory mapped/mounted as a volume into it. GraalVM 19.1.1 JDK available on path. Use the script to also build the meterian scanner native image for Linux inside an isolate Linux environment.
 
